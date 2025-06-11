@@ -36,7 +36,7 @@ def calculate_score(entailment: float, neutral: float, contradiction: float) -> 
 # Core sentence comparison function
 def compare_sentences(model, tokenizer, premise: str, hypothesis: str) -> float:
     input_text = f"{premise} [SEP] {hypothesis}"
-    inputs = tokenizer(input_text, return_tensors="pt", padding="max_length", truncation=True, max_length=4096)
+    inputs = tokenizer(input_text, return_tensors="pt", padding="max_length", truncation=True, max_length=128)
     inputs = {key: value.to(device) for key, value in inputs.items()}
 
     model.eval()

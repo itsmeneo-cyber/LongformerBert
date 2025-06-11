@@ -1,0 +1,14 @@
+# Ignore cache and venv
+__pycache__/
+BertProject_env/
+
+# Ignore model folder
+# fine_tuned_longformer/model.safetensors
+# fine_tuned_longformer/model.accuracy-file.csv
+# fine_tuned_longformer/model.merges.txt
+# fine_tuned_longformer/model.special_tokens_map.json
+# fine_tuned_longformer/model.tokenizer_config.json
+# fine_tuned_longformer/vocab.json
+
+# Ignore entire model folder
+fine_tuned_longformer/

@@ -1,5 +1,7 @@
+import os
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
-from config import MODEL_PATH, USE_HF_HUB
+USE_HF_HUB = os.getenv("USE_HF_HUB", "false").lower() == "true"
+MODEL_PATH = os.getenv("HF_MODEL_ID") if USE_HF_HUB else "fine_tuned_longformer"
 
 
 print("Loading model and tokenizer...")

@@ -43,6 +43,12 @@ def compare_sentences(model, tokenizer, premise: str, hypothesis: str) -> float:
 
     return calculate_score(entailment, neutral, contradiction)
 
+
+@app.get("/health")
+def health_check():
+    return {"status": "ok", "message": "Service is running"}
+
+
 @app.post("/compare_answers")
 def compare_answers(request: CompareAnswersRequest):
     try:
